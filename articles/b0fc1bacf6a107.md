@@ -90,7 +90,7 @@ flowchart TD
     H -->|No| J[Container Instance]
 ```
 
-### Windows依存がある場合
+### 新規開発（スケーラビリティ重視）の場合
 
 ```mermaid
 flowchart TD
@@ -103,7 +103,7 @@ flowchart TD
     F -->|No| H[Container Instance]
 ```
 
-### 新規開発（スケーラビリティ重視）の場合
+### Windows依存がある場合
 
 ```mermaid
 flowchart TD
