@@ -249,28 +249,45 @@ Caddy を使用すると：
 - 🏗️ AKS の Virtual Nodes として利用
 - 🧪 一時的なテスト環境
 
-### Azure Functions on Container Apps 🔥
+### Azure Functions：Flex Consumption vs Container Apps 🔥
 
-**最新のおすすめ構成！**
+Azure Functions のホスティングには **Flex Consumption Plan** と **Container Apps** の2つの選択肢があります。
 
-Azure Functions は Container Apps 上で実行できるようになりました。これにより：
+#### Flex Consumption Plan が優れている点 ✨
 
-- ⚡ Functions のプログラミングモデル
-- 📦 コンテナの柔軟性
-- 🔄 KEDA によるスケーリング
-- 🖥️ GPU サポート（AI/ML ワークロード向け）
+Flex Consumption Plan は 2024年に GA となった最新のプランで、多くのシナリオで**最適な選択肢**です：
 
-が組み合わさった最強の構成が可能に！
+- ⚡ **コールドスタートの改善**: 事前ウォームアップインスタンスで高速起動
+- 💰 **コスト効率**: 従量課金で無駄なし
+- 🔒 **VNet 統合**: プライベートネットワーク対応が標準
+- 🛠️ **マネージドサービス**: インフラ管理不要
+
 
 ```
-| 機能 | Container Apps | Flex Consumption Plan |
-|------|---------------|----------------------|
+| 機能 | Flex Consumption | Container Apps |
+|------|-----------------|----------------|
 | スケールトゥゼロ | ✅ | ✅ |
 | 最大スケール | 1,000 | 1,000 |
-| カスタムコンテナ | ✅ | ❌ |
-| GPU サポート | ✅ | ❌ |
-| Dapr 統合 | ✅ | ❌ |
+| コールドスタート | 改善済み（事前ウォームアップ） | 通常 |
+| VNet 統合 | ✅（標準サポート） | ✅ |
+| カスタムコンテナ | ❌ | ✅ |
+| GPU サポート | ❌ | ✅ |
+| Dapr 統合 | ❌ | ✅ |
+| 運用の複雑さ | 低い | 中程度 |
 ```
+
+#### Container Apps を選ぶべきケース 🐳
+
+Container Apps 上の Functions は以下の場合に検討：
+
+- 🖥️ **GPU が必要**（AI/ML ワークロード）
+- 📦 **カスタムコンテナイメージ**を使いたい
+- 🔄 **Dapr** との統合が必要
+- 🏗️ 他の Container Apps とまとめて管理したい
+
+:::message
+**結論**: 特別な要件がない限り、**Flex Consumption Plan** を第一選択にしましょう！シンプルで運用コストも低いです。🎯
+:::
 
 ## まとめ：私のおすすめ 🏆
 
@@ -279,7 +296,7 @@ Azure Functions は Container Apps 上で実行できるようになりました
 1. **新規の .NET プロジェクト** → **.NET Aspire + Container Apps** 🥇
 2. **シンプルなWebアプリ** → **App Service** 🥈
 3. **大規模なマイクロサービス** → **AKS (できれば Automatic)** 🥉
-4. **イベント駆動処理** → **Functions on Container Apps** ⚡
+4. **イベント駆動処理** → **Flex Consumption Plan** ⚡
 5. **単発のバッチ処理** → **Container Instances** 🚢
 
 ### 最後に
