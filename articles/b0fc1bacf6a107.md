@@ -90,11 +90,11 @@ flowchart TD
     H -->|No| J[Container Instance]
 ```
 
-### 新規開発（スケーラビリティ重視）の場合
+### 新規開発の場合
 
 ```mermaid
 flowchart TD
-    A[どうしてもWindowsでしか動かせない<br/>ライブラリーがある] --> B{マイクロサービスまたは<br/>大規模サービスを構築する}
+    A[新規開発の場合] --> B{マイクロサービスまたは<br/>大規模サービスを構築する}
     B -->|Yes| C[Azure Kubernetes Service]
     B -->|No| D{1日あるいは季節で<br/>アクセス数の変動が激しい}
     D -->|Yes| E[Container Apps]
@@ -107,7 +107,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[マイクロサービスまたは大規模<br/>サービスを構築する<br/>またはアクセス数の大幅な変動<br/>の要件がある] --> B{マイクロサービスまたは<br/>大規模サービスを構築する}
+    A[どうしてもWindowsでしか動かせない<br/>ライブラリーがある] --> B{マイクロサービスまたは<br/>大規模サービスを構築する}
     B -->|Yes| C[Azure Kubernetes Service]
     B -->|No| D{運用は楽をしたい}
     D -->|Yes| E[App Service]
