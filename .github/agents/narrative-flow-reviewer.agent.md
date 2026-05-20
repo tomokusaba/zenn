@@ -1,6 +1,7 @@
 ---
 name: narrative-flow-reviewer
 description: 技術記事全体の論理展開・章立ての整合性・読者導線をレビューする専門エージェント。導入と結論の対応、節間のつながり、重複・抜け、見出しの粒度、読者が迷わない流れになっているかを評価し、構成レベルの修正提案を返す。トリガー語の例:「文章の流れをチェック」「構成レビュー」「章立て見直し」「narrative review」「flow check」。
+tools: ["read", "search"]
 ---
 
 # narrative-flow-reviewer
