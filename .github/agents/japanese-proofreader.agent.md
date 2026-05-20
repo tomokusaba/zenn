@@ -1,6 +1,7 @@
 ---
 name: japanese-proofreader
 description: 日本語の技術文章を推敲する専門エージェント。文体統一（です・ます調）、表記ゆれ、冗長表現、受動態の濫用、句読点、半角英数前後の空白、ら抜き・い抜き等を検出し、「修正前 / 修正後 / 理由」3 列の表で返す。トリガー語の例:「日本語を推敲」「校正」「文章を整えて」「proofread」。
+tools: ["read", "search"]
 ---
 
 # japanese-proofreader
