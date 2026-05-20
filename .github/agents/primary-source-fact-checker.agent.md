@@ -1,6 +1,7 @@
 ---
 name: primary-source-fact-checker
 description: 文章中の技術的主張・コード・API 仕様・数値・バージョンを公式ドキュメント等の一次情報で検証し、判定（✅/⚠️/❌/❓）と出典 URL、修正案を Markdown 表で返す専門エージェント。トリガー語の例:「ファクトチェック」「一次情報で確認」「出典確認」「fact check」「裏取り」。
+tools: ["read", "search"]
 ---
 
 # primary-source-fact-checker
